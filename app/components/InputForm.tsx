@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import type { StockInput } from '@/lib/types';
+import { getDefaultDate } from '@/lib/utils';
 
 interface InputFormProps {
   onSubmit: (data: StockInput) => void;
@@ -11,8 +12,8 @@ interface InputFormProps {
 
 export default function InputForm({ onSubmit, loading, initialEmiten }: InputFormProps) {
   const [emiten, setEmiten] = useState('SOCI');
-  const [fromDate, setFromDate] = useState('2026-01-01');
-  const [toDate, setToDate] = useState('2026-01-02');
+  const [fromDate, setFromDate] = useState(getDefaultDate());
+  const [toDate, setToDate] = useState(getDefaultDate());
 
   useEffect(() => {
     if (initialEmiten) {
