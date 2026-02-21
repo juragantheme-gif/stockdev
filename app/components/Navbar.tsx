@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import TokenStatusIndicator from './TokenStatusIndicator';
 import JobStatusIndicator from './JobStatusIndicator';
+import StockbitFetchingIndicator from './StockbitFetchingIndicator';
 import ThemeToggle from './ThemeToggle';
 import { Github, Menu, X } from 'lucide-react';
 
@@ -97,6 +98,7 @@ const Navbar = () => {
             </a>
           </div>
           <div className="nav-status-group">
+            <StockbitFetchingIndicator />
             <JobStatusIndicator />
             <TokenStatusIndicator />
             <ThemeToggle />
